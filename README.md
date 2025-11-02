@@ -63,136 +63,93 @@ UI components and screens:
 - Flutter SDK 3.19.0 or higher
 - Dart SDK 3.3.0 or higher
 
-### Installation
+# Rick and Morty Flutter App
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/alilnil7/Flutter-Rick-and-Morty-character-catalog-with-favorites-and-offline-support.git
-   cd Flutter-Rick-and-Morty-character-catalog-with-favorites-and-offline-support
-Install dependencies
+A mobile application for browsing Rick and Morty characters with favorites and offline support.
 
+## 🚀 Quick Start
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/alilnil7/Flutter-Rick-and-Morty-character-catalog-with-favorites-and-offline-support.git
+2. Go to project directory
+bash
+cd Flutter-Rick-and-Morty-character-catalog-with-favorites-and-offline-support
+3. Install dependencies
 bash
 flutter pub get
-Generate Hive adapters
-
+4. Generate Hive code (required)
 bash
 flutter packages pub run build_runner build --delete-conflicting-outputs
-Run the application
-
+5. Run the app
 bash
 flutter run
-Available Platforms
-✅ Android (emulator or physical device)
+When prompted, select a device:
 
-✅ iOS (requires macOS)
+2: Chrome (recommended)
 
-✅ Web (Chrome, Edge, Safari)
+3: Edge
 
-✅ Windows (requires Developer Mode)
+1: Windows (requires Developer Mode)
 
-📖 Usage
-Main Screen
-Browse all Rick and Morty characters
+###📱 Features
+Character list with pagination
 
-Scroll to load more characters (pagination)
+Add/remove favorites with local storage
 
-Tap heart icon to add/remove from favorites
+Offline support for favorites
 
-Pull to refresh the list
+Sort favorites by name or status
 
-Favorites Screen
-View all favorite characters
+Clean UI with Material Design
 
-Sort by name or status using the menu in AppBar
+### 🛠 Tech Stack
+Flutter 3.35.7 • Dart 3.9.2
 
-Characters persist locally and available offline
+State Management: BLoC/Cubit
 
-🔧 Building
-Android APK
+Local Database: Hive
+
+HTTP Client: Dio
+
+Image Caching: cached_network_image
+
+🔧 Build Commands
+Run in browser
+bash
+flutter run -d chrome
+Build APK
 bash
 flutter build apk --release
-App Bundle
-bash
-flutter build appbundle --release
-Web Version
+Build Web
 bash
 flutter build web --release
-🎯 Implementation Details
-State Management
-Uses BLoC/Cubit pattern for predictable state management
+📁 Project Structure
+text
+lib/
+├── data/              # Data layer
+├── business_logic/    # BLoC states & cubits
+└── presentation/      # UI screens & widgets
+### 🎯 API
+Uses Rick and Morty API
 
-Separate cubits for character list and favorites
+GET /character - get characters list
 
-Reactive UI updates with BlocBuilder
+GET /character?page={page} - pagination
 
-Local Storage
-Hive for fast NoSQL local storage
+###❓ Troubleshooting
+White screen in browser?
+Open Developer Tools (F12)
 
-Favorites persist between app sessions
-
-Data caching for offline functionality
-
-Network Layer
-Dio for HTTP requests with error handling
-
-CORS proxy support for web version
-
-Pagination implementation with infinite scroll
-
-UI/UX
-Material Design 3 components
-
-Responsive layout
-
-Intuitive navigation with BottomNavigationBar
-
-Loading states and error handling
-
-🔌 API
-The app uses The Rick and Morty API:
-
-Endpoints:
-
-GET /character - Get character list
-
-GET /character?page={page} - Pagination
-
-GET /character?name={name} - Search characters
-
-🐛 Troubleshooting
-Common Issues
-White screen in browser:
-
-Check browser console for CORS errors
+Check Console for errors
 
 Try different CORS proxy in character_repository.dart
 
-Code generation fails:
-
+Code generation fails?
 bash
 flutter clean
 flutter pub get
 dart run build_runner build --delete-conflicting-outputs
-Hive initialization errors:
-
-Ensure Hive adapters are properly generated
-
-Check Hive type IDs in model classes
-
-🤝 Contributing
-Fork the project
-
-Create your feature branch (git checkout -b feature/AmazingFeature)
-
-Commit your changes (git commit -m 'Add some AmazingFeature')
-
-Push to the branch (git push origin feature/AmazingFeature)
-
-Open a Pull Request
-
-📄 License
-This project is created as a test task implementation. The Rick and Morty API is provided for free.
-
 👨‍💻 Author
 Alibe
 
