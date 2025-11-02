@@ -70,19 +70,19 @@ A mobile application for browsing Rick and Morty characters with favorites and o
 ## 🚀 Quick Start
 
 ### 1. Clone the repository
-```bash
+```
 git clone https://github.com/alilnil7/Flutter-Rick-and-Morty-character-catalog-with-favorites-and-offline-support.git
 2. Go to project directory
-bash
+
 cd Flutter-Rick-and-Morty-character-catalog-with-favorites-and-offline-support
 3. Install dependencies
-bash
+
 flutter pub get
 4. Generate Hive code (required)
-bash
+
 flutter packages pub run build_runner build --delete-conflicting-outputs
 5. Run the app
-bash
+
 flutter run
 When prompted, select a device:
 
@@ -116,13 +116,13 @@ Image Caching: cached_network_image
 
 🔧 Build Commands
 Run in browser
-bash
+
 flutter run -d chrome
 Build APK
-bash
+
 flutter build apk --release
 Build Web
-bash
+
 flutter build web --release
 📁 Project Structure
 text
@@ -146,7 +146,7 @@ Check Console for errors
 Try different CORS proxy in character_repository.dart
 
 Code generation fails?
-bash
+
 flutter clean
 flutter pub get
 dart run build_runner build --delete-conflicting-outputs
